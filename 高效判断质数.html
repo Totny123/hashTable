@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高效判断质数</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(num) {
+        if (num === 2) {
+          return true;
+        } else {
+          let temp = parseInt(Math.sqrt(num));
+          //小于等于。不然4也会判断成质数。
+          for (let i = 2; i <= temp; i++) {
+            if (num % i === 0) {
+              return false;
+            }
+          }
+          return true;
+        }
+      }
+      console.log(isPrime(2));
+      console.log(isPrime(4));
+      console.log(isPrime(11));
+      console.log(isPrime(14));
+    </script>
+  </body>
+</html>
